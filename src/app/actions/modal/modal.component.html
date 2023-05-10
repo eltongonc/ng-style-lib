@@ -1,0 +1,26 @@
+<div
+  class="absolute modal modal-bottom sm:modal-middle"
+  [ngClass]="{ 'modal-open': modalOpen }"
+  (click)="closeModal()"
+>
+  <div (click)="$event.stopPropagation()" class="modal-box relative">
+    <button
+      class="absolute btn btn-circle btn-xs right-2 top-2"
+      (click)="closeModal()"
+    >
+      x
+    </button>
+
+    <ng-content></ng-content>
+
+    <!-- Will show custom actions -->
+    <div class="modal-action">
+      <ng-content select="[modalFooter]"></ng-content>
+    </div>
+
+    <!-- Will be hidden if user passes custom actions -->
+    <div class="modal-action actions-default">
+      <button class="btn" (click)="handleCancel()">Ok</button>
+    </div>
+  </div>
+</div>

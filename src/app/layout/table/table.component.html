@@ -1,0 +1,25 @@
+<app-component-display
+  title="Table"
+  description="Table can be used to show a list of data in a table format."
+>
+  <div class="overflow-x-auto">
+    <table class="table table-normal w-full" [ngClass]="classNames">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th *ngFor="let header of headers">{{ header.label }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rowData">
+          <ng-container *ngFor="let header of headers">
+            <ng-container [ngSwitch]="header.key">
+              <th *ngSwitchCase="'id'">{{ row[header.key] }}</th>
+              <td *ngSwitchDefault>{{ row[header.key] }}</td>
+            </ng-container>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</app-component-display>

@@ -1,0 +1,13 @@
+<figure class="w-[300px]">
+  <img
+    class="w-full h-[300px] object-cover"
+    [ngClass]="maskClass"
+    *ngIf="src"
+    [src]="src"
+    [alt]="title"
+  />
+
+  <figcaption class="text-center" *ngIf="title">
+    {{ title }}
+  </figcaption>
+</figure>

@@ -1,0 +1,50 @@
+<app-component-display
+  title="Hero component"
+  description="Hero is a component for displaying a large box or image with a title and
+  description."
+  [code]="componentCode"
+>
+  <header>
+    <div class="mb-4">
+      <h4>Alignment</h4>
+      <div class="btn-group">
+        <button
+          class="btn"
+          *ngFor="let option of options"
+          [ngClass]="{ 'btn-active': align === option.value }"
+          (click)="onChangeAlign(option.value)"
+        >
+          {{ option.label }}
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="not-prose component-preview">
+    <div class="hero min-h-[30rem] bg-base-200 rounded-box">
+      <div class="hero-content" [ngClass]="align">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Hello there</h1>
+          <p class="py-6">
+            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+            a id nisi.
+          </p>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-component-display>
+
+<!-- TODO refactor this bit -->
+<ng-template #componentCode>
+  <div>
+    <button class="btn mb-2" (click)="onShowCode()">
+      {{ !showCode ? "Show Code" : "Hide Code" }}
+    </button>
+    <div *ngIf="showCode">
+      <app-code-highlighter [code]="code"></app-code-highlighter>
+    </div>
+  </div>
+</ng-template>

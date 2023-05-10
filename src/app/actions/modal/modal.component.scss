@@ -1,0 +1,8 @@
+.modal-action:empty,
+.actions-default {
+  display: none;
+}
+
+.modal-action:empty + .actions-default {
+  display: flex;
+}

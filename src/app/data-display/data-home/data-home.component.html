@@ -1,0 +1,14 @@
+<app-component-display
+  title="Image"
+  description="Display and image with optional shape mask"
+>
+  <app-image
+    [src]="images[0].src"
+    [title]="images[0].title"
+    [mask]="images[0].mask"
+  ></app-image>
+</app-component-display>
+
+<app-component-display title="Image list" description="List of images">
+  <app-image-list [images]="images"></app-image-list>
+</app-component-display>

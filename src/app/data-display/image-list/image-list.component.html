@@ -1,0 +1,8 @@
+<div class="flex gap-16 w-full overflow-scroll">
+  <app-image
+    *ngFor="let img of images"
+    [src]="img.src"
+    [title]="img.title"
+    [mask]="img.mask"
+  ></app-image>
+</div>

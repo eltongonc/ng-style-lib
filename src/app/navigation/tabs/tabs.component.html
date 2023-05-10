@@ -1,0 +1,16 @@
+<app-component-display title="Tabs" description="Shows a navigation tabs">
+  <div class="tabs w-full flex justify-center">
+    <a
+      *ngFor="let tab of tabNav"
+      [routerLink]="tab.url"
+      routerLinkActive="tab-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="tab tab-lg tab-lifted"
+      >{{ tab.label }}</a
+    >
+  </div>
+
+  <div class="tabs-content border">
+    <router-outlet></router-outlet>
+  </div>
+</app-component-display>

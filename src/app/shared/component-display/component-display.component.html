@@ -1,0 +1,10 @@
+<div class="prose w-full max-w-full flex-grow">
+  <h2 class="text-4xl">{{ title }}</h2>
+  <p class="mb-16">{{ description }}</p>
+
+  <ng-content select="header" />
+  <div class="not-prose component-preview border p-2 mb-4 rounded">
+    <ng-content />
+  </div>
+  <ng-container [ngTemplateOutlet]="code" />
+</div>
